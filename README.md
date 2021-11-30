@@ -1,6 +1,6 @@
 # PEBAL
 This repo contains the Pytorch implementation of our paper:
-> [**Pixel-wise Energy-biased Abstention Learning for Anomaly Segmentationon Complex Urban Driving Scenes**](https://arxiv.org/pdf/2111.12264.pdf)
+> [**Pixel-wise Energy-biased Abstention Learning for Anomaly Segmentation on Complex Urban Driving Scenes**](https://arxiv.org/pdf/2111.12264.pdf)
 >
 > [Yu Tian*](https://yutianyt.com/), Yuyuan Liu*, [Guansong Pang](https://sites.google.com/site/gspangsite/home?authuser=0), Fengbei Liu, Yuanhong Chen, [Gustavo Carneiro](https://cs.adelaide.edu.au/~carneiro/).
 
