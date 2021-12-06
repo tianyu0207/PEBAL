@@ -4,6 +4,7 @@ This repo contains the Pytorch implementation of our paper:
 >
 > [Yu Tian*](https://yutianyt.com/), Yuyuan Liu*, [Guansong Pang](https://sites.google.com/site/gspangsite/home?authuser=0), Fengbei Liu, Yuanhong Chen, [Gustavo Carneiro](https://cs.adelaide.edu.au/~carneiro/).
 
+- **SOTA on 4 benchmarks.** Check out [**Papers With Code**](https://paperswithcode.com/paper/pixel-wise-energy-biased-abstention-learning). 
 
 ## Inference
 
