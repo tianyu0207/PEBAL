@@ -6,6 +6,9 @@ This repo contains the Pytorch implementation of our paper:
 
 - **SOTA on 4 benchmarks.** Check out [**Papers With Code**](https://paperswithcode.com/paper/pixel-wise-energy-biased-abstention-learning). 
 
+![image](https://user-images.githubusercontent.com/19222962/161691512-61a2dfa8-2079-465c-abaa-5b8fdf42e5f7.png)
+
+
 ## Inference
 
 > [**Checkpoint for anomaly segmentation**](https://drive.google.com/file/d/12CebI1TlgF724-xvI3vihjbIPPn5Icpm/view?usp=sharing)
