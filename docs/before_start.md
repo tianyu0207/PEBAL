@@ -25,8 +25,8 @@ set batch_size=8 for all the experiments, with learning rate 1e-5 and 900 * 900 
 ### checkpoints
 
 we follow [Meta-OoD](https://github.com/robin-chan/meta-ood) and use the deeplabv3+ checkpoint
-in [here](https://github.com/NVIDIA/semantic-segmentation/tree/sdcnet). you'll need to put it in **"ckpts/pretrained_ckpts"** directory, and
-**please note downloading the checkpoint before running the code is necessary in our approach.**
+in [here](https://github.com/NVIDIA/semantic-segmentation/tree/sdcnet). you'll need to put it in "ckpts/pretrained_ckpts" directory, and
+**please note that downloading the checkpoint before running the code is necessary for our approach.**
 
 for training, simply execute
 
