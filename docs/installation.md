@@ -34,6 +34,14 @@ $ cd pebal
    common setting with **19** classes.
 3) specify the COCO dataset path in **code/config/config.py** file, which is **C.city_root_path**.
 
+### fishyscapes
+
+1) for the time being, you can download from the official website in [here](https://fishyscapes.com/dataset), you
+   alternatively can download the preprocessed fishyscapes dataset
+   in [here](http://robotics.ethz.ch/~asl-datasets/Dissimilarity/data_processed.tar).
+2) specify the coco dataset path in **code/config/config.py** file, which is **C.fishy_root_path**.
+
+
 ### coco (for outlier exposures)
 
 1) please follow [Meta-OoD](https://github.com/robin-chan/meta-ood/tree/master/preparation) to prepare the COCO images
@@ -45,10 +53,3 @@ $ cd pebal
    $ python preparation/prepare_coco_segmentation.py
    ```
 2) specify the coco dataset path in **code/config/config.py** file, which is **C.coco_root_path**.
-
-### fishyscapes
-
-1) for the time being, you can download from the official website in [here](https://fishyscapes.com/dataset), you
-   alternatively can download the preprocessed fishyscapes dataset
-   in [here](http://robotics.ethz.ch/~asl-datasets/Dissimilarity/data_processed.tar).
-2) specify the coco dataset path in **code/config/config.py** file, which is **C.fishy_root_path**.
