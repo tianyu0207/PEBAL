@@ -5,8 +5,10 @@
 >
 > by [Yu Tian*](https://yutianyt.com/), Yuyuan Liu*, [Guansong Pang](https://sites.google.com/site/gspangsite/home?authuser=0), Fengbei Liu, Yuanhong Chen, [Gustavo Carneiro](https://cs.adelaide.edu.au/~carneiro/).
 >
->
-![image](https://user-images.githubusercontent.com/19222962/161691512-61a2dfa8-2079-465c-abaa-5b8fdf42e5f7.png)
+
+
+<img width="933" alt="Screen Shot 2022-06-11 at 2 56 11 pm" src="https://user-images.githubusercontent.com/102338056/173174121-f515ce6d-a865-4dcd-aa00-4b0e4fd5d448.png">
+<!-- ![image](https://user-images.githubusercontent.com/19222962/161691512-61a2dfa8-2079-465c-abaa-5b8fdf42e5f7.png) -->
 
 ### Installation
 
