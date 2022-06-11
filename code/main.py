@@ -22,8 +22,7 @@ warnings.filterwarnings('ignore', '.*imshow.*', )
 def declare_settings(config_file, logger, engine):
     logger.critical("distributed data parallel training: {}".format(str("on" if engine.distributed is True
                                                                         else "off")))
-    logger.warning("eccv 2022")
-
+    
     logger.critical("gpus: {}, with batch_size[local]: {}".format(engine.world_size, config.batch_size))
 
     logger.critical("network architecture: {}, with ResNet {} backbone".format("deeplabv3+",
