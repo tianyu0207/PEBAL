@@ -1,4 +1,5 @@
 # PEBAL
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/pixel-wise-energy-biased-abstention-learning/anomaly-detection-on-fishyscapes-1)](https://paperswithcode.com/sota/anomaly-detection-on-fishyscapes-1?p=pixel-wise-energy-biased-abstention-learning)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/pixel-wise-energy-biased-abstention-learning/anomaly-detection-on-lost-and-found)](https://paperswithcode.com/sota/anomaly-detection-on-lost-and-found?p=pixel-wise-energy-biased-abstention-learning)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/pixel-wise-energy-biased-abstention-learning/anomaly-detection-on-fishyscapes-l-f)](https://paperswithcode.com/sota/anomaly-detection-on-fishyscapes-l-f?p=pixel-wise-energy-biased-abstention-learning)
 > [**Pixel-wise Energy-biased Abstention Learning for Anomaly Segmentation on Complex Urban Driving Scenes**](https://arxiv.org/pdf/2111.12264.pdf)
