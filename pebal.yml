@@ -9,7 +9,7 @@ dependencies:
   - bzip2=1.0.8=h7f98852_4
   - ca-certificates=2020.12.5=ha878542_0
   - certifi=2020.12.5=py38h578d9bd_1
-  - cudatoolkit=11.1.1=h6406543_8
+  # - cudatoolkit=11.1.1=h6406543_8
   - freetype=2.10.4=h0708190_1
   - gmp=6.2.1=h58526e2_0
   - gnutls=3.6.13=h85f3911_1
@@ -64,7 +64,6 @@ dependencies:
     - decorator==4.4.2
     - docker-pycreds==0.4.0
     - easydict==1.9
-    - efficientnet-pytorch==0.7.1
     - faiss-gpu==1.7.0
     - ffmpeg==1.4
     - gcloud==0.18.3
