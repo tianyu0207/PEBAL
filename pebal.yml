@@ -160,4 +160,4 @@ dependencies:
     - websocket-client==1.1.0
     - werkzeug==1.0.1
     - wandb>=0.12.0
-prefix: /anaconda/envs/ps-mt
+prefix: /anaconda/envs/pebal
