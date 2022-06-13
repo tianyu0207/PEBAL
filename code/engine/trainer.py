@@ -67,7 +67,7 @@ class Trainer:
                 self.tensorboard.upload_wandb_info(current_step=curr_idx, info_dict=curr_info)
 
         if self.engine.local_rank <= 0:
-            engine.save_and_link_checkpoint(snapshot_dir=self.saved_dir, name='epoch_{}.pth'.format(epoch))
+            self.engine.save_and_link_checkpoint(snapshot_dir=self.saved_dir, name='epoch_{}.pth'.format(epoch))
 
         return
 
