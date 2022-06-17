@@ -12,7 +12,7 @@ import sklearn.metrics as sk
 import torch
 from sklearn.metrics import roc_curve, precision_recall_curve, average_precision_score, auc
 
-logger = logging.getLogger("pebal")
+logger = logging.getLogger("cmd")
 logger.propagate = False
 recall_level_default = 0.95
 model_urls = {
