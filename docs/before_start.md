@@ -8,11 +8,9 @@ we visualize our training details via wandb (https://wandb.ai/site).
    ```shell 
    $ wandb login
    ```
-2) you'll need to copy & paste you API key in terminal
-   ```shell
-   $ https://wandb.ai/authorize
-   ```
-   or add the key to the "code/config/config.py" with
+2) you can find you API key in (https://wandb.ai/authorize)
+
+3) add the key to the "code/config/config.py" with
    ```shell
    C.wandb_key = ""
    ```
