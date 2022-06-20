@@ -38,7 +38,7 @@ $ python code/main.py
 
 please download our checkpoint
 from [here](https://drive.google.com/file/d/12CebI1TlgF724-xvI3vihjbIPPn5Icpm/view?usp=sharing) and specify the
-checkpoint path in config file.
+checkpoint path ("ckpts/pebal_weight_path") in config file.
 
 ```shell
 python code/test.py
