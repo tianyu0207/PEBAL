@@ -5,7 +5,7 @@ The project is based on the pytorch 1.8.1 with python 3.8.
 ## 1. Clone the Git  repo
 
 ``` shell
-$ git https://github.com/tianyu0207/PEBAL.git
+$ git clone https://github.com/tianyu0207/PEBAL.git
 $ cd pebal
 ```
 
