@@ -120,6 +120,9 @@ class DeepWV3Plus(torch.nn.Module):
 
         # regurlar gaussian smoothing
         anomaly_score = anomaly_score.unsqueeze(0)
+        
+        # translate to "anomaly_score.cpu()", in case you meet the bug:
+        # CUDA error: CUBLAS_STATUS_ALLOC_FAILED
         anomaly_score = self.gaussian_smoothing(anomaly_score)
         anomaly_score = anomaly_score.squeeze(0)
 
