@@ -109,9 +109,10 @@ def main(gpu, ngpus_per_node, config, args):
         if curr_epoch % config.eval_epoch == 0:
             if engine.local_rank <= 0:
                 """
-                # 1). we currently only support single gpu valid for the cityscapes sliding validation, and it 
-                # might take long time, feel free to uncomment it. (we'll have to use the sliding eval. to achieve 
-                  the performance reported in the GitHub. )
+                # 1). we currently only support single gpu for the cityscapes sliding validation, and it might
+                # take long time, feel free to uncomment it. (we have to use the sliding eval. to achieve the
+                # performance reported in the repo. https://github.com/NVIDIA/semantic-segmentation/tree/sdcnet
+                # from the pre-trained ckpt.)
                 # 2). we follow Meta-OoD to use single scale validation in OoD datasets, for fair comparison.
                 """
                 # valid_epoch(model=model, engine=engine, test_set=cityscapes, my_wandb=visual_tool,
