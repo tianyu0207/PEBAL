@@ -80,11 +80,10 @@ class Gambler(torch.nn.Module):
             # mask out each of the ood output channel
             reserve_boosting_energy = torch.add(true_pred, reservation.unsqueeze(1))[mask.unsqueeze(1).
                 repeat(1, 19, 1, 1)].log()
-
-            if torch.any(torch.isnan(-reserve_boosting_energy.mean())):
-                ood_loss = torch.tensor(0., requires_grad=True)
-            else:
-                ood_loss = - self.ood_reg * reserve_boosting_energy.mean()
+            
+            if reserve_boosting_energy.nelement() > 0:
+                reserve_boosting_energy = torch.clamp(reserve_boosting_energy, min=1e-7).log()
+                ood_loss = - self.ood_reg * reserve_boosting_energy
 
             # gambler loss for in-lier pixels
             void_mask = targets == 255
@@ -96,7 +95,7 @@ class Gambler(torch.nn.Module):
             # exclude the ood pixel mask and void pixel mask
             gambler_loss = gambler_loss[(~mask) & (~void_mask)].log()
             assert not torch.any(torch.isnan(gambler_loss)), "nan check"
-            return -gambler_loss.mean() + ood_loss
+            return -gambler_loss.mean() + ood_loss.mean()
         else:
             mask = targets == 255
             targets[mask] = 0
