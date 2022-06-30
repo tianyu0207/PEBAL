@@ -94,7 +94,8 @@ class Gambler(torch.nn.Module):
 
             # exclude the ood pixel mask and void pixel mask
             gambler_loss = gambler_loss[(~mask) & (~void_mask)].log()
-            assert not torch.any(torch.isnan(gambler_loss)), "nan check"
+            
+            # assert not torch.any(torch.isnan(gambler_loss)), "nan check"
             return -gambler_loss.mean() + ood_loss.mean()
         else:
             mask = targets == 255
@@ -102,8 +103,6 @@ class Gambler(torch.nn.Module):
             reservation = torch.div(reservation, reward)
             gambler_loss = torch.gather(true_pred, index=targets.unsqueeze(1), dim=1).squeeze()
             gambler_loss = torch.add(gambler_loss, reservation)
-
-            assert torch.all(gambler_loss[~mask] > 0), "0 check"
             gambler_loss = gambler_loss[~mask].log()
-            assert not torch.any(torch.isnan(gambler_loss)), "nan check"
+            # assert not torch.any(torch.isnan(gambler_loss)), "nan check"
             return -gambler_loss.mean()
