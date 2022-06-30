@@ -688,14 +688,14 @@ class CityscapesCocoMix(BaseDataset):
         item_name = self.targets[i].split("/")[-1].split(".")[0].replace('_gtFine', '')
         img = img[:, :, ::-1]
 
-        if self.preprocess is not None:
-            img, gt, edge_gt, extra_dict = self.preprocess(img, gt)
-            
         if i >= self.city_number:
             img, gt = self.mix_object(cut_object_image=img, cut_object_mask=gt)
-            ood_sample = False if 254 not in np.unique(gt) else True
-        else:
-            ood_sample = False
+            
+        if self.preprocess is not None:
+            img, gt, edge_gt, extra_dict = self.preprocess(img, gt)
+        
+        # mask the imgs contain the anomolous
+        ood_sample = False if 254 not in np.unique(gt) else True
 
         if self._split_name in ['train', 'trainval', 'train_aug', 'trainval_aug']:
             img = torch.from_numpy(np.ascontiguousarray(img)).float()
