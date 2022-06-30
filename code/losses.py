@@ -51,6 +51,7 @@ class Gambler(torch.nn.Module):
         self.reward = torch.tensor([reward]).cuda(device)
         self.pretrain = pretrain
         self.ood_reg = ood_reg
+        self.device = device
 
     def forward(self, pred, targets, wrong_sample=False):
 
@@ -81,6 +82,7 @@ class Gambler(torch.nn.Module):
             reserve_boosting_energy = torch.add(true_pred, reservation.unsqueeze(1))[mask.unsqueeze(1).
                 repeat(1, 19, 1, 1)].log()
             
+            ood_loss = torch.tensor([.0], device=self.device)
             if reserve_boosting_energy.nelement() > 0:
                 reserve_boosting_energy = torch.clamp(reserve_boosting_energy, min=1e-7).log()
                 ood_loss = - self.ood_reg * reserve_boosting_energy
