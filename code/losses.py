@@ -64,7 +64,7 @@ class Gambler(torch.nn.Module):
         # compute the reward via the energy score;
         reward = torch.logsumexp(pred[:, :-1, :, :], dim=1).pow(2)
 
-        if not reward.shape[0] == 0:
+        if reward.nelement() > 0:
             gaussian_smoothing = transforms.GaussianBlur(7, sigma=1)
             reward = reward.unsqueeze(0)
             reward = gaussian_smoothing(reward)
@@ -82,23 +82,21 @@ class Gambler(torch.nn.Module):
             reserve_boosting_energy = torch.add(true_pred, reservation.unsqueeze(1))[mask.unsqueeze(1).
                 repeat(1, 19, 1, 1)].log()
             
-            ood_loss = torch.tensor([.0], device=self.device)
+            gambler_loss_out = torch.tensor([.0], device=self.device)
             if reserve_boosting_energy.nelement() > 0:
                 reserve_boosting_energy = torch.clamp(reserve_boosting_energy, min=1e-7).log()
-                ood_loss = - self.ood_reg * reserve_boosting_energy
+                gambler_loss_out = self.ood_reg * reserve_boosting_energy
 
             # gambler loss for in-lier pixels
             void_mask = targets == 255
             targets[void_mask] = 0  # make void pixel to 0
             targets[mask] = 0  # make ood pixel to 0
-            gambler_loss = torch.gather(true_pred, index=targets.unsqueeze(1), dim=1).squeeze()
-            gambler_loss = torch.add(gambler_loss, in_reservation)
+            gambler_loss_in = torch.gather(true_pred, index=targets.unsqueeze(1), dim=1).squeeze()
+            gambler_loss_in = torch.add(gambler_loss_in, in_reservation)
 
             # exclude the ood pixel mask and void pixel mask
-            gambler_loss = gambler_loss[(~mask) & (~void_mask)].log()
-            
-            # assert not torch.any(torch.isnan(gambler_loss)), "nan check"
-            return -gambler_loss.mean() + ood_loss.mean()
+            gambler_loss_in = gambler_loss_in[(~mask) & (~void_mask)].log()
+            return -(gambler_loss_in.mean() + gambler_loss_out.mean())
         else:
             mask = targets == 255
             targets[mask] = 0
