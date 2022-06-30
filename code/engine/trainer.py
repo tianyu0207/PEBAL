@@ -65,7 +65,12 @@ class Trainer:
                 curr_info['gambler_loss'] = loss
                 curr_info['energy_loss'] = e_loss * .1
                 self.tensorboard.upload_wandb_info(current_step=curr_idx, info_dict=curr_info)
-
+                
+                tbar.set_description("epoch ({}) | "
+                                     "gambler_loss: {:.3f}"
+                                     "energy_loss: {:.3f}".format(epoch, curr_info['gambler_loss'],
+                                                                  curr_info['energy_loss']))
+                
         if self.engine.local_rank <= 0:
             self.engine.save_and_link_checkpoint(snapshot_dir=self.saved_dir, name='epoch_{}.pth'.format(epoch))
 
