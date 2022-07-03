@@ -27,19 +27,19 @@ class PolyLR(BaseLR):
 
     
 class WarmUpPolyLR(BaseLR):
-    def __init__(self, start_lr, lr_power, total_iters, warmup_steps, min_lr=1e-8):
+    def __init__(self, start_lr, lr_power, total_iters, warmup_steps, end_lr=1e-8):
         self.start_lr = start_lr
         self.lr_power = lr_power
         self.total_iters = total_iters + 0.0
         self.warmup_steps = warmup_steps
-        self.min_lr = min_lr
+        self.end_lr = end_lr
 
     def get_lr(self, cur_iter):
         if cur_iter < self.warmup_steps:
             return self.start_lr * (cur_iter / self.warmup_steps)
         else:
             curr_lr = self.start_lr * ((1 - float(cur_iter) / self.total_iters) ** self.lr_power)
-            return curr_lr if curr_lr > self.min_lr else self.min_lr
+            return numpy.real(numpy.clip(curr_lr, a_min=self.end_lr, a_max=self.start_lr))
 
 
 class MultiStageLR(BaseLR):
