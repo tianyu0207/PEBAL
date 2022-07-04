@@ -49,7 +49,7 @@ class Tensorboard:
         self.restore_transform = torchvision.transforms.Compose([
             DeNormalize(config['image_mean'], config['image_std']),
             torchvision.transforms.ToPILImage()])
-        self.visual_root_path = '../visuals/'
+        self.visual_root_path = 'visuals/'
         if not os.path.exists(self.visual_root_path):
             os.mkdir(path=self.visual_root_path)
 
