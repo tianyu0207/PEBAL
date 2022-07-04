@@ -69,13 +69,10 @@ class Gambler(torch.nn.Module):
             reward = reward.unsqueeze(0)
             reward = gaussian_smoothing(reward)
             reward = reward.squeeze(0)
-            in_reward = reward
         else:
             reward = self.reward
-            in_reward = self.reward
 
         if wrong_sample:  # if there's ood pixels inside the image
-            in_reservation = torch.div(reservation, in_reward)
             reservation = torch.div(reservation, reward)
             mask = targets == 254
             # mask out each of the ood output channel
@@ -92,7 +89,7 @@ class Gambler(torch.nn.Module):
             targets[void_mask] = 0  # make void pixel to 0
             targets[mask] = 0  # make ood pixel to 0
             gambler_loss_in = torch.gather(true_pred, index=targets.unsqueeze(1), dim=1).squeeze()
-            gambler_loss_in = torch.add(gambler_loss_in, in_reservation)
+            gambler_loss_in = torch.add(gambler_loss_in, reservation)
 
             # exclude the ood pixel mask and void pixel mask
             gambler_loss_in = gambler_loss_in[(~mask) & (~void_mask)].log()
