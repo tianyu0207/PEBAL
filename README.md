@@ -7,7 +7,8 @@
 > [**Pixel-wise Energy-biased Abstention Learning for Anomaly Segmentation on Complex Urban Driving Scenes**](https://arxiv.org/pdf/2111.12264.pdf)
 >
 > by [Yu Tian*](https://yutianyt.com/), Yuyuan Liu*, [Guansong Pang](https://sites.google.com/site/gspangsite/home?authuser=0), Fengbei Liu, Yuanhong Chen, [Gustavo Carneiro](https://cs.adelaide.edu.au/~carneiro/).
-> [**Accepted at ECCV 2022.**]
+>
+> **Accepted at ECCV 2022.**
 
 
 <img width="933" alt="Screen Shot 2022-06-11 at 2 56 11 pm" src="https://user-images.githubusercontent.com/102338056/173174121-f515ce6d-a865-4dcd-aa00-4b0e4fd5d448.png">
