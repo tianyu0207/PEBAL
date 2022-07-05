@@ -4,9 +4,9 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/pixel-wise-energy-biased-abstention-learning/anomaly-detection-on-road-anomaly)](https://paperswithcode.com/sota/anomaly-detection-on-road-anomaly?p=pixel-wise-energy-biased-abstention-learning)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/pixel-wise-energy-biased-abstention-learning/anomaly-detection-on-fishyscapes-l-f)](https://paperswithcode.com/sota/anomaly-detection-on-fishyscapes-l-f?p=pixel-wise-energy-biased-abstention-learning)
 
-> [eccv22] [**Pixel-wise Energy-biased Abstention Learning for Anomaly Segmentation on Complex Urban Driving Scenes**](https://arxiv.org/pdf/2111.12264.pdf)
+> [**ECCV'22**] [**Pixel-wise Energy-biased Abstention Learning for Anomaly Segmentation on Complex Urban Driving Scenes**](https://arxiv.org/pdf/2111.12264.pdf)
 >
-> by [Yu Tian*](https://yutianyt.com/), Yuyuan Liu*, [Guansong Pang](https://sites.google.com/site/gspangsite/home?authuser=0), Fengbei Liu, Yuanhong Chen, [Gustavo Carneiro](https://cs.adelaide.edu.au/~carneiro/).
+> by [Yu Tian*](https://yutianyt.com/), Yuyuan Liu*, [Guansong Pang](https://sites.google.com/site/gspangsite/home?authuser=0), [Fengbei Liu](https://fbladl.github.io/), Yuanhong Chen, [Gustavo Carneiro](https://cs.adelaide.edu.au/~carneiro/).
 >
 
 
