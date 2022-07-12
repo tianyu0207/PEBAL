@@ -36,12 +36,11 @@ $ cd pebal
 
 ### fishyscapes
 
-1) for the time being, you can download from the official website in [here](https://fishyscapes.com/dataset), you
-   alternatively can download the preprocessed fishyscapes dataset
-   in [here](http://robotics.ethz.ch/~asl-datasets/Dissimilarity/data_processed.tar).
+1) for the time being, you can download from the official website in [here](https://fishyscapes.com/dataset).
 2) specify the coco dataset path in **code/config/config.py** file, which is **C.fishy_root_path**.
 
-
+*You can alternatively download both preprocessed fishyscapes & cityscapes datasets* [here](http://robotics.ethz.ch/~asl-datasets/Dissimilarity/data_processed.tar) (token from synboost GitHub).
+   
 ### coco (for outlier exposures)
 
 1) please follow [Meta-OoD](https://github.com/robin-chan/meta-ood/tree/master/preparation) to prepare the COCO images
