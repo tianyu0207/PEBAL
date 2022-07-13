@@ -116,7 +116,6 @@ def get_mix_loader(engine, collate_fn=None, augment=True, cs_root=None,
 
     if engine.distributed:
         train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset)
-        batch_size = config.batch_size // engine.world_size
         is_shuffle = False
 
     train_loader = data.DataLoader(train_dataset,
@@ -125,7 +124,7 @@ def get_mix_loader(engine, collate_fn=None, augment=True, cs_root=None,
                                    drop_last=True,
                                    shuffle=is_shuffle,
                                    pin_memory=True,
-                                   sampler=None,
+                                   sampler=train_sampler,
                                    collate_fn=collate_fn)
 
     void_ind = train_dataset.void_ind
