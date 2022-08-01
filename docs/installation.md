@@ -52,3 +52,89 @@ $ cd pebal
    $ python preparation/prepare_coco_segmentation.py
    ```
 2) specify the coco dataset path in **code/config/config.py** file, which is **C.coco_root_path**.
+
+## 4. Dataset Structure
+
+1) the tree structures of the training datasets (including both cityscapes, and coco) are shown below.
+
+```shell
+city_scape/
+├── annotation
+│   └── city_gt_fine
+│       ├── train
+│       └── val
+└── images
+    └── city_gt_fine
+        ├── train
+        └── val
+coco/
+├── annotations
+│   └── ood_seg_train2017
+└── train2017
+```
+2) the tree sturcutres of all the validation datasets are shown in below.
+```shell
+fishyscapes/
+├── LostAndFound
+│   ├── entropy
+│   ├── labels
+│   ├── labels_with_ROI
+│   ├── logit_distance
+│   ├── mae_features
+│   ├── original
+│   ├── semantic
+│   └── synthesis
+└── Static
+    ├── entropy
+    ├── labels
+    ├── labels_with_ROI
+    ├── logit_distance
+    ├── mae_features
+    ├── original
+    └── semantic
+
+road_anomaly/
+├── entropy
+├── labels
+├── mae_features
+├── original
+├── semantic
+└── synthesis
+
+lost_and_found/
+├── gtCoarse
+│   ├── test
+│   │   ├── 02_Hanns_Klemm_Str_44
+│   │   ├── 04_Maurener_Weg_8
+│   │   ├── 05_Schafgasse_1
+│   │   ├── 07_Festplatz_Flugfeld
+│   │   └── 15_Rechbergstr_Deckenpfronn
+│   └── train
+│       ├── 01_Hanns_Klemm_Str_45
+│       ├── 03_Hanns_Klemm_Str_19
+│       ├── 06_Galgenbergstr_40
+│       ├── 10_Schlossberg_9
+│       ├── 11_Parkplatz_Flugfeld
+│       ├── 12_Umberto_Nobile_Str
+│       ├── 13_Elly_Beinhorn_Str
+│       └── 14_Otto_Lilienthal_Str_24
+└── leftImg8bit
+    ├── test
+    │   ├── 02_Hanns_Klemm_Str_44
+    │   ├── 04_Maurener_Weg_8
+    │   ├── 05_Schafgasse_1
+    │   ├── 07_Festplatz_Flugfeld
+    │   └── 15_Rechbergstr_Deckenpfronn
+    └── train
+        ├── 01_Hanns_Klemm_Str_45
+        ├── 03_Hanns_Klemm_Str_19
+        ├── 06_Galgenbergstr_40
+        ├── 10_Schlossberg_9
+        ├── 11_Parkplatz_Flugfeld
+        ├── 12_Umberto_Nobile_Str
+        ├── 13_Elly_Beinhorn_Str
+        └── 14_Otto_Lilienthal_Str_24
+
+```
+
+
