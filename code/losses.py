@@ -77,7 +77,7 @@ class Gambler(torch.nn.Module):
             mask = targets == 254
             # mask out each of the ood output channel
             reserve_boosting_energy = torch.add(true_pred, reservation.unsqueeze(1))[mask.unsqueeze(1).
-                repeat(1, 19, 1, 1)].log()
+                repeat(1, 19, 1, 1)]
             
             gambler_loss_out = torch.tensor([.0], device=self.device)
             if reserve_boosting_energy.nelement() > 0:
