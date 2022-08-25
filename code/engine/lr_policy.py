@@ -4,7 +4,7 @@
 # @Author  : yuchangqian
 # @Contact : changqian_yu@163.com
 # @File    : lr_policy.py.py
-
+import numpy
 from abc import ABCMeta, abstractmethod
 
 
