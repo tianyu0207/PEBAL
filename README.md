@@ -18,7 +18,7 @@
 
 Please install the dependencies and dataset based on this [***installation***](./docs/installation.md) document.
 
-### Getting start
+### Getting started
 
 Please follow this [***instruction***](./docs/before_start.md) document to reproduce our results.
 
